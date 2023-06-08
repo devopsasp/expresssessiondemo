@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+     <style>
+        body{
+            background-color: bisque;
+            margin:0px;
+            padding:0px;
+        }
+        nav{
+            background-color: black;
+            color:white;
+            height:90px;
+            
+
+
+        }
+        li a{
+               color:white;
+               font-size: 25px;
+        }
+        nav ul{
+            
+            text-align: center;
+            margin:0px;
+        }
+        nav ul li{
+            list-style-type:none;
+            display:inline-block;
+            margin:10px;
+            padding:12px;
+            vertical-align: middle;
+
+        }
+
+        .card{
+            border-radius: 15px;
+            border:2px solid black;
+            width:200px;
+            height:130px;
+            margin:5px;
+            background-color: white;
+            font-size:35px;
+            text-align: center;
+            padding:2px;
+            vertical-align: middle;
+            display: inline-block;
+    
+        }
+        input{
+            border-radius: 15px;
+            font-size: 20px;
+            color:blue;
+        }
+        label{
+            font-size: 20px;
+            color:blue;
+        }
+        span{
+            font-size: 25px;
+            color:white;
+            
+        }
+     </style>
+    
+    </head>
+     
+    <body>
+     <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><span id="username"></span></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+     </nav>
+     <script>
+        let mycookie=document.cookie
+        username=mycookie.split("=")[1]
+        document.getElementById("username").innerHTML="Hello " +username
+   </script>
+     <div class="card">
+               Items in stock:9800
+     </div>
+     <div class="card">
+       Orders received:7800
+</div>
+  <div class="card">
+    Users logged in:1347
+  </div>
+  <div class="card">
+    Orders delivered:547
+  </div>
+  <div>
+    <form method="post" action="/saveorder">
+    <label>Enter Item Name</label><br/>
+    <input type="text" name="itemname"/><br/>
+    <label>Enter Quantity</label><br/>
+    <input type="text" name="quantity"/><br/>
+    <input type="submit" value="Save"/> 
+  </div>
+</form>
+    </body>
+</html>
